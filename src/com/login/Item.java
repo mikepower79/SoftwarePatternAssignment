@@ -3,15 +3,13 @@ package com.login;
 public class Item {
 	
 	private int item_id, quantity;
-	private String title,manufacturer,category,image;
+	private String title, manufacturer, category, image;
 	private float price;
 	
 	public Item() {
 		
 	}
 	
-	
-
 	public Item(int item_id, int quantity, String title, String manufacturer,
 			String category, String image, float price) {
 		super();
@@ -23,8 +21,6 @@ public class Item {
 		this.image = image;
 		this.price = price;
 	}
-
-
 
 	public int getItem_id() {
 		return item_id;
@@ -81,9 +77,4 @@ public class Item {
 	public void setPrice(float price) {
 		this.price = price;
 	}
-	
-	
-	
-	
-
 }

@@ -6,7 +6,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>DT354 Electronics Stor</title>
+	<title>DT354 Online Electronics Store</title>
     <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
 </head>
 
@@ -49,7 +49,21 @@ a {
 		<div class="navbar-inner">
 		<div class="container">
 		<ul class="nav nav-pills">
-		<li><a href="computers.jsp">Computing</a></li>
+		<li><s:form action="computers">
+		<s:submit value="Computing"></s:submit>
+		</s:form></li>
+		
+		<li><s:form action="tv">
+		<s:submit value="TV & Entertainment"></s:submit>
+		</s:form></li>
+		
+		<li><s:form action="kitchenAppliances">
+		<s:submit value="Kitchen Appliances"></s:submit>
+		</s:form></li>
+		
+		<li><s:form action="cameras">
+		<s:submit value="Cameras"></s:submit>
+		</s:form></li>
 		
 		</ul>
 		</div>

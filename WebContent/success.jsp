@@ -6,8 +6,6 @@
 
 </head>
 <body bgcolor="#E6E6FA">
-
-
 	<h3>User home page</h3>
 
 </body>
@@ -39,9 +37,6 @@
 	<s:form action="logout">
 		<s:submit value="Logout"></s:submit>
 	</s:form>
-
-
-
 	
 </body>
 </html>

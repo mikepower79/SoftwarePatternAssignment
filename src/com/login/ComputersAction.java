@@ -8,40 +8,30 @@ import java.util.ArrayList;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class ComputersAction extends ActionSupport{
+public class ComputersAction extends ActionSupport {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
-
 	private ArrayList<Item> itemList;
-
-
-	private ArrayList<Item> itemList1;
-
-
-	private ArrayList<Item> itemList2;
 
 	public String execute() {
 	      String ret = ERROR;
 	      Connection conn1 = null;
-	  itemList  =  new ArrayList<Item>();
+	      itemList  =  new ArrayList<Item>();
 
 	      try {
 	        
-	    	  String URL = "jdbc:mysql://localhost/paddy";
+	    	  String URL = "jdbc:mysql://localhost/paddyassignment";
 				Class.forName("com.mysql.jdbc.Driver");
 				conn1 = DriverManager.getConnection(URL, "root", "root");
 				
 				Statement st1 = conn1.createStatement(); 
-				ResultSet rs1 = st1.executeQuery("select * from item where category = 'computers' or'phones'");
+				ResultSet rs1 = st1.executeQuery("select * from item where category = 'computing'");
 				
 				
 			     Item ve = null;
 			   
-				while (rs1.next()) {
+				 while (rs1.next()) {
 					  ve = new Item();
 					
 					ve.setItem_id(rs1.getInt(1));
@@ -54,10 +44,6 @@ public class ComputersAction extends ActionSupport{
 					itemList.add(ve);
 					
 					}
-			
-					System.out.println(ve.getTitle()+"cccccccccccccccccccccc");
-					System.out.println(ve.getImage()+"cccccccccccccccccccccc");
-					
 				
 				return SUCCESS;
 	      }
@@ -82,5 +68,4 @@ public class ComputersAction extends ActionSupport{
 	public void setItemList(ArrayList<Item> itemList) {
 		this.itemList = itemList;
 	}
-
 }
