@@ -9,13 +9,13 @@
 
 		<action name="loginaction" class="com.login.LoginAction" method="execute">
 			<result name="success">index2.jsp</result>
-			<result name="success1">/admin.jsp</result>
-			<result name="error">/loginfail.jsp</result>
+			<result name="success1">admin.jsp</result>
+			<result name="error">loginfail.jsp</result>
 		</action>
 		
 		<action name="register" class="com.login.RegisterAction" method="execute">
-			<result name="success">/success.jsp</result>
-			<result name="error">/loginfail.jsp</result>
+			<result name="success">success.jsp</result>
+			<result name="error">loginfail.jsp</result>
 		</action>
 		
 		<action name="viewStock" class="com.login.DisplayStock" method="execute">
@@ -24,69 +24,74 @@
 		</action>
 		
 		<action name="updateStock" class="com.login.Success" method="execute">
-			<result name="success">/updateStock.jsp</result>
-			<result name="error">/loginfail.jsp</result>
+			<result name="success">updateStock.jsp</result>
+			<result name="error">loginfail.jsp</result>
 		</action>
 		
 		<action name="registerItem" class="com.login.UpdateStockAction" method="execute">
-			<result name="success">/admin.jsp</result>
-			<result name="error">/loginfail.jsp</result>
+			<result name="success">admin.jsp</result>
+			<result name="error">loginfail.jsp</result>
 		</action>
 		
 		<action name="computers" class="com.login.ComputersAction" method="execute">
-			<result name="success">/computers.jsp</result>
-			<result name="error">/loginfail.jsp</result>
+			<result name="success">computers.jsp</result>
+			<result name="error">loginfail.jsp</result>
 		</action>
 		
 		<action name="tv" class="com.login.TVAction" method="execute">
-			<result name="success">/computers.jsp</result>
-			<result name="error">/loginfail.jsp</result>
+			<result name="success">computers.jsp</result>
+			<result name="error">loginfail.jsp</result>
 		</action>
 		
 		<action name="kitchenAppliances" class="com.login.KitchenAppliancesAction" method="execute">
-			<result name="success">/computers.jsp</result>
-			<result name="error">/loginfail.jsp</result>
+			<result name="success">computers.jsp</result>
+			<result name="error">loginfail.jsp</result>
 		</action>
 		
 		<action name="cameras" class="com.login.CameraAction" method="execute">
-			<result name="success">/computers.jsp</result>
-			<result name="error">/loginfail.jsp</result>
+			<result name="success">computers.jsp</result>
+			<result name="error">loginfail.jsp</result>
+		</action>
+		
+		<action name="productReviews" class="com.login.CameraAction" method="execute">
+			<result name="success">productReviews.jsp</result>
+			<result name="error">loginfail.jsp</result>
 		</action>
 		
 		<action name="selectedItems" class="com.login.SelectedItemsAction" method="execute">
-			<result name="success">/success.jsp</result>
-			<result name="error">/loginfail.jsp</result>
+			<result name="success">success.jsp</result>
+			<result name="error">loginfail.jsp</result>
 		</action>
 		
 		<action name="logout" class="com.login.LogoutAction" method="execute">
-			<result name="success">/index.jsp</result>
-			<result name="error">/loginfail.jsp</result>
+			<result name="success">index.jsp</result>
+			<result name="error">loginfail.jsp</result>
 		</action>
 		
 		<action name="addtobasket" class="com.login.AddToBasket" method="execute">
-			<result name="success">/checkout.jsp</result>
-			<result name="success2">/nostockerror.jsp</result>
-			<result name="error">/loginfail.jsp</result>	
+			<result name="success">checkout.jsp</result>
+			<result name="success2">nostockerror.jsp</result>
+			<result name="error">loginfail.jsp</result>	
 		</action>
 			
 		<action name="goback" class="com.login.SelectedItemsAction" method="execute">
-			<result name="success">/success.jsp</result>
-			<result name="error">/loginfail.jsp</result>
+			<result name="success">index2.jsp</result>
+			<result name="error">loginfail.jsp</result>
 		</action>
 		
-		<action name="proceedtocheckout" class="com.login.SelectedItemsAction" method="execute">
-			<result name="success">/success.jsp</result>
-			<result name="error">/loginfail.jsp</result>
+		<action name="moreproducts" class="com.login.SelectedItemsAction" method="execute">
+			<result name="success">index2.jsp</result>
+			<result name="error">loginfail.jsp</result>
 		</action>
 		
 		<action name="final" class="com.login.FinalCheckout" method="execute">
-			<result name="success">/finalcheckout.jsp</result>
-			<result name="error">/loginfail.jsp</result>
+			<result name="success">finalcheckout.jsp</result>
+			<result name="error">loginfail.jsp</result>
 		</action>
 		
 		<action name="updatedatabases" class="com.login.UpdateDatabaseAction" method="execute">
-			<result name="success">/finalcheckout.jsp</result>
-			<result name="error">/loginfail.jsp</result>
+			<result name="success">finalcheckout.jsp</result>
+			<result name="error">loginfail.jsp</result>
 		</action>
 	</package>
 </struts>

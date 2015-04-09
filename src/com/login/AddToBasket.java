@@ -16,38 +16,26 @@ public class AddToBasket extends ActionSupport{
 	private static final long serialVersionUID = 1L;
 	private String email,title,manufacturer,category;
 	private int purchases_id, item_id,id,ammount,quantity;
-	public ArrayList<PurchasesBean> getPurchasesList() {
-		return purchasesList;
-	}
-
-	public void setPurchasesList(ArrayList<PurchasesBean> purchasesList) {
-		this.purchasesList = purchasesList;
-	}
-
-	public void setItem_id(int item_id) {
-		this.item_id = item_id;
-	}
-
 	private float price;
 	private int num;
 	
 	public String execute() {
 		
 		String ret = ERROR;
-		Connection conn1 = null;
+		Connection conn = null;
 		itemList =  new ArrayList<Item>();
 		purchasesList = new ArrayList<PurchasesBean>();
 
 		try {
-			String URL = "jdbc:mysql://localhost/paddy";
+			String URL = "jdbc:mysql://localhost/paddyassignment";
 			Class.forName("com.mysql.jdbc.Driver");
-			conn1 = DriverManager.getConnection(URL, "root", "root");
+			conn = DriverManager.getConnection(URL, "root", "root");
 	
-			 num =getId();
+			num =getId();
 			System.out.println(num+"bbbbbbbbbbbbbbb");
 			
-			Statement st = conn1.createStatement(); 
-			ResultSet rs = st.executeQuery("select * from item where item_id = 4 ");
+			Statement st = conn.createStatement(); 
+			ResultSet rs = st.executeQuery("select * from item where item_id = 5 ");
 		       
 			Item ve = null;
 			while (rs.next()) {
@@ -59,7 +47,7 @@ public class AddToBasket extends ActionSupport{
 				
 				itemList.add(ve);
 				
-				PreparedStatement ps=conn1.prepareStatement("insert into purchases values(?,?,?,?,?)"); 
+				PreparedStatement ps=conn.prepareStatement("insert into purchases values(?,?,?,?,?)"); 
 				ps.setInt(1, getPurchases_id());
 				ps.setString(2, rs.getString(2));				
 				ps.setString(3 , rs.getString(3));
@@ -81,9 +69,9 @@ public class AddToBasket extends ActionSupport{
 		} catch (Exception e) {
 			ret = ERROR;
 		} finally {
-			if (conn1 != null) {
+			if (conn != null) {
 				try {
-					conn1.close();
+					conn.close();
 				} catch (Exception e) {
 				}
 			}
@@ -98,6 +86,18 @@ public class AddToBasket extends ActionSupport{
 
 	public void setNum(int num) {
 		this.num = num;
+	}
+	
+	public ArrayList<PurchasesBean> getPurchasesList() {
+		return purchasesList;
+	}
+
+	public void setPurchasesList(ArrayList<PurchasesBean> purchasesList) {
+		this.purchasesList = purchasesList;
+	}
+
+	public void setItem_id(int item_id) {
+		this.item_id = item_id;
 	}
 
 	private int getItem_id() {

@@ -60,10 +60,10 @@ tr {
 	<s:form action="addtobasket">
 		<s:textfield name="id" label="Item id" value=""/>
 		<s:textfield name="ammount" label="Amount" value="" />	
-		<s:submit value="Add to basdket" align="left"/>
+		<s:submit value="Add to basket" align="left"/>
 	</s:form>
 	
-	<s:form action= "proceedtocheckout">
+	<s:form action= "moreproducts">
 		<s:submit value="More products" align="left" />	
 	</s:form>	
 

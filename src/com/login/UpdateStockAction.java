@@ -13,9 +13,6 @@ public class UpdateStockAction extends ActionSupport{
 	private int item_id,quantity;
 	private float price;
 	private static final long serialVersionUID = 1L;
-	
-	
-	
 
 	public UpdateStockAction() {
 		

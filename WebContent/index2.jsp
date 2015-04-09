@@ -65,6 +65,10 @@ a {
 		<s:submit value="Cameras"></s:submit>
 		</s:form></li>
 		
+		<li><s:form action="productReviews">
+		<s:submit value="Product Reviews"></s:submit>
+		</s:form></li>
+		
 		</ul>
 		</div>
 		</div>

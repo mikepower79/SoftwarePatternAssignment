@@ -5,11 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Selected Items</title>
 </head>
 <body>
 
-	<s:property value="id" />
 	You have selected
 	<s:property value="ammount " />
 	<s:iterator value="itemList" status="stat">
@@ -22,11 +21,11 @@
 	</s:iterator>
 	
 	<s:form action="goback">
-	<s:submit value="Chose Item" align="left"/>
+	<s:submit value="Add Another Item" align="left"/>
 	</s:form>
 	
 	<s:form action="final">
-	<s:submit value="proceed to chekout" align="left"/>
+	<s:submit value="Proceed to Chekout" align="left"/>
 	</s:form>
 </body>
 </html>

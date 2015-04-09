@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Checkout Page</title>
 </head>
 <body>
-FInal checkout page
+<h1>Checkout</h1>
 <s:property value="manufacturer" />
 
 		<s:iterator value= "purchasesList">

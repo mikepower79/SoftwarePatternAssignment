@@ -10,7 +10,6 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class UpdateDatabaseAction extends ActionSupport{
 
-	
 	private static final long serialVersionUID = -453350948722456448L;
 	private String title ;
 	private String manufacturer,time;
@@ -22,7 +21,7 @@ public class UpdateDatabaseAction extends ActionSupport{
 		Connection conn1 = null;
 		
 		try {
-			String URL = "jdbc:mysql://localhost/paddy";
+			String URL = "jdbc:mysql://localhost/paddyassignment";
 			Class.forName("com.mysql.jdbc.Driver");
 		
 			conn1 = DriverManager.getConnection(URL, "root", "root");
@@ -45,12 +44,9 @@ public class UpdateDatabaseAction extends ActionSupport{
 			ps.executeUpdate();
 			
 			}
-			
-			
+				
 			ret = SUCCESS;
-			
-	
-	
+		
 		} catch (Exception e) {
 			ret = ERROR;
 		} finally {
@@ -120,7 +116,4 @@ public class UpdateDatabaseAction extends ActionSupport{
 	public void setTime(String time) {
 		this.time = time;
 	}
-	
-	
-
 }
