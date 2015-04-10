@@ -43,7 +43,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware{
 	        	 email =rs.getString(2);
 	        	 User user = new User(name ,email, userName, password, address1, address2, address3, id);
 	        	 session.setAttribute("user", user);
-	             if(name.equalsIgnoreCase("administrator")){
+	             if(name.equalsIgnoreCase("Joe Admin")){
 	             	return  "success1";
 	             }else
 	             ret = SUCCESS;

@@ -7,10 +7,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Update Stock Page</title>
 </head>
 <body>
-update Stopk page
+<h1>Add Item to Stock</h1>
 
 <s:form action="registerItem">  
 <s:textfield name="title" label="Title"></s:textfield>  
@@ -20,7 +20,7 @@ update Stopk page
 <s:textfield name="image" label="Image"></s:textfield>
 <s:textfield name="quantity" label="Quantity"></s:textfield>
 
-<s:submit value="Register Item"></s:submit>
+<s:submit value="Add Item to Stock"></s:submit>
 </s:form>
 </body>
 </html>

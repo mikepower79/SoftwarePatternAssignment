@@ -38,8 +38,18 @@
 			<result name="error">loginfail.jsp</result>
 		</action>
 		
+		<action name="computersAdmin" class="com.login.ComputersAction" method="execute">
+			<result name="success">computersAdmin.jsp</result>
+			<result name="error">loginfail.jsp</result>
+		</action>
+		
 		<action name="tv" class="com.login.TVAction" method="execute">
 			<result name="success">computers.jsp</result>
+			<result name="error">loginfail.jsp</result>
+		</action>
+		
+		<action name="tvAdmin" class="com.login.TVAction" method="execute">
+			<result name="success">computersAdmin.jsp</result>
 			<result name="error">loginfail.jsp</result>
 		</action>
 		
@@ -48,8 +58,18 @@
 			<result name="error">loginfail.jsp</result>
 		</action>
 		
+		<action name="kitchenAppliancesAdmin" class="com.login.KitchenAppliancesAction" method="execute">
+			<result name="success">computersAdmin.jsp</result>
+			<result name="error">loginfail.jsp</result>
+		</action>
+		
 		<action name="cameras" class="com.login.CameraAction" method="execute">
 			<result name="success">computers.jsp</result>
+			<result name="error">loginfail.jsp</result>
+		</action>
+		
+		<action name="camerasAdmin" class="com.login.CameraAction" method="execute">
+			<result name="success">computersAdmin.jsp</result>
 			<result name="error">loginfail.jsp</result>
 		</action>
 		

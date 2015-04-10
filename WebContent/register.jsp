@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Register Page</title>
 </head>
 <body>
-
+<h1>Create New Account</h1>
 <s:form action="register">  
 <s:textfield name="name" label="Name"></s:textfield>
 <s:textfield name="address1" label="Address line 1"></s:textfield>
