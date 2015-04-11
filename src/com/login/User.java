@@ -2,19 +2,16 @@ package com.login;
 
 
 public class User {
-	private String name, address1,address2,address3;
-	private String email;
-	private String userName;
-	private String password;
 	private int id;
+	private String name, address1, address2, address3, email, userName, password;
 	
 	public User() {
 		
 	}
 
-	public User(String name, String address1, String address2, String address3,
-			String email, String userName, String password, int id) {
-		super();
+	public User(int id, String name, String address1, String address2, String address3,
+			String email, String userName, String password) {
+		this.id = id;
 		this.name = name;
 		this.address1 = address1;
 		this.address2 = address2;
@@ -22,7 +19,6 @@ public class User {
 		this.email = email;
 		this.userName = userName;
 		this.password = password;
-		this.id = id;
 	}
 
 	public int getId() {

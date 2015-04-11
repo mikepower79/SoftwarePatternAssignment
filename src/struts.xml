@@ -73,7 +73,7 @@
 			<result name="error">loginfail.jsp</result>
 		</action>
 		
-		<action name="productReviews" class="com.login.CameraAction" method="execute">
+		<action name="productReviews" class="com.login.Success" method="execute">
 			<result name="success">productReviews.jsp</result>
 			<result name="error">loginfail.jsp</result>
 		</action>
@@ -111,6 +111,41 @@
 		
 		<action name="updatedatabases" class="com.login.UpdateDatabaseAction" method="execute">
 			<result name="success">finalcheckout.jsp</result>
+			<result name="error">loginfail.jsp</result>
+		</action>
+		
+		<action name="ipadReview" class="com.login.ProductReviewsAction">
+			<result name="success">ipadReviews.jsp</result>
+			<result name="error">loginfail.jsp</result>
+		</action>
+		
+		<action name="macbookReview" class="com.login.Success">
+			<result name="success">macbookReviews.jsp</result>
+			<result name="error">loginfail.jsp</result>
+		</action>
+		
+		<action name="tvReview" class="com.login.Success">
+			<result name="success">tvReviews.jsp</result>
+			<result name="error">loginfail.jsp</result>
+		</action>
+		
+		<action name="cameraReview" class="com.login.Success">
+			<result name="success">cameraReviews.jsp</result>
+			<result name="error">loginfail.jsp</result>
+		</action>
+		
+		<action name="addipadReview" class="com.login.AddProductReview">
+			<result name="success">reviewSuccess.jsp</result>
+			<result name="error">loginfail.jsp</result>
+		</action>
+		
+		<action name="returnToLogin" class="com.login.Success">
+			<result name="success">index.jsp</result>
+			<result name="error">loginfail.jsp</result>
+		</action>
+		
+		<action name="viewCustomers" class="com.login.CustomerAction">
+			<result name="success">customerList.jsp</result>
 			<result name="error">loginfail.jsp</result>
 		</action>
 	</package>

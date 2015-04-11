@@ -42,6 +42,10 @@ Welcome
 		<s:submit value="Update Stock"></s:submit>
 		</s:form></li>
 		
+		<li><s:form action="viewCustomers">
+		<s:submit value="Customer List"></s:submit>
+		</s:form></li>
+		
 		<li><s:form action="logout">
 		<s:submit value="Logout" style="float: right;"></s:submit>
 		</s:form></li>

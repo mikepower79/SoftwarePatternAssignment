@@ -7,20 +7,19 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class ProductReviewsAction extends ActionSupport {
-	
+public class CustomerAction extends ActionSupport {
+
 	private static final long serialVersionUID = 1L;
-	private ArrayList<ProductReview> reviewList;
+	private ArrayList<User> customerList;
 	
-	public ProductReviewsAction() {
+	public CustomerAction() {
 		
 	}
 	
 	public String execute() {
-		
 		String ret = ERROR;
 	      Connection con = null;
-	      reviewList  =  new ArrayList<ProductReview>();
+	      customerList  =  new ArrayList<User>();
 
 	      try {
 	        
@@ -29,18 +28,18 @@ public class ProductReviewsAction extends ActionSupport {
 				con = DriverManager.getConnection(URL, "root", "root");
 				
 				Statement st = con.createStatement(); 
-				ResultSet rs = st.executeQuery("select * from productreviews ");
+				ResultSet rs = st.executeQuery("select * from user ");
 				
-				ProductReview review = null;
+				 User user = null;
 				 while (rs.next()) {
-					 review = new ProductReview();
-					 review.setName(rs.getString(1));
-					 review.setProduct(rs.getString(2));
-					 review.setComment(rs.getString(3));
-					 review.setRating(rs.getInt(4));
-					 review.setDate(rs.getTimestamp(5));
-	
-					reviewList.add(review);
+					 user = new User();
+					 user.setName(rs.getString(2));
+					 user.setAddress1(rs.getString(3));
+					 user.setAddress2(rs.getString(4));
+					 user.setAddress3(rs.getString(5));
+					 user.setEmail(rs.getString(6));
+					 
+					 customerList.add(user);
 					
 				}
 				return SUCCESS;
@@ -57,15 +56,13 @@ public class ProductReviewsAction extends ActionSupport {
 			}
 		
 			return ret;
-		}
-
-	public ArrayList<ProductReview> getReviewList() {
-		return reviewList;
 	}
 
-	public void setReviewList(ArrayList<ProductReview> reviewList) {
-		this.reviewList = reviewList;
+	public ArrayList<User> getCustomerList() {
+		return customerList;
+	}
+
+	public void setCustomerList(ArrayList<User> customerList) {
+		this.customerList = customerList;
 	}
 }
-
-	

@@ -41,7 +41,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware{
 	         while (rs.next()) {
 	        	 name = rs.getString(1);
 	        	 email =rs.getString(2);
-	        	 User user = new User(name ,email, userName, password, address1, address2, address3, id);
+	        	 User user = new User(id, name, address1, address2, address3, email, userName, password);
 	        	 session.setAttribute("user", user);
 	             if(name.equalsIgnoreCase("Joe Admin")){
 	             	return  "success1";

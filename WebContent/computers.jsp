@@ -6,30 +6,14 @@
 <html>
 <head>
 <title>Computing Page</title>
-<style>
-table, td, th, tr {
-    border: 1px solid black;
-}
 
-table {
-    width: 100%;
-}
-
-th {
-    text-align: center;
-}
-
-tr {
-    text-align: center;
-}
-</style>
 </head>
 
 <body>
 	
  You are viewing the <s:property value="category" /> page 
 
-		<table cellspacing="0" cellpadding="0" border="3" width="500">
+		<table cellspacing="0" cellpadding="0" border="3" width="100%">
 			<tr style="font-weight: bold">
 
 				<td><s:text name="Item ID"/></td>
