@@ -15,8 +15,6 @@ Welcome
 	<s:property value="#session.user.getName()" />
 	<h2>View Stock</h2>
 	
-	
-	
 	<div class="navbar">
 		<div class="navbar-inner">
 		<div class="container">
@@ -44,6 +42,10 @@ Welcome
 		
 		<li><s:form action="viewCustomers">
 		<s:submit value="Customer List"></s:submit>
+		</s:form></li>
+		
+		<li><s:form action="purchaseHistory">
+		<s:submit value="Purchase History"></s:submit>
 		</s:form></li>
 		
 		<li><s:form action="logout">

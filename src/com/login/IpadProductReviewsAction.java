@@ -7,12 +7,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class ProductReviewsAction extends ActionSupport {
+public class IpadProductReviewsAction extends ActionSupport {
 	
 	private static final long serialVersionUID = 1L;
 	private ArrayList<ProductReview> reviewList;
 	
-	public ProductReviewsAction() {
+	public IpadProductReviewsAction() {
 		
 	}
 	
@@ -29,7 +29,7 @@ public class ProductReviewsAction extends ActionSupport {
 				con = DriverManager.getConnection(URL, "root", "root");
 				
 				Statement st = con.createStatement(); 
-				ResultSet rs = st.executeQuery("select * from productreviews ");
+				ResultSet rs = st.executeQuery("select * from productreviews where product = 'ipad' ");
 				
 				ProductReview review = null;
 				 while (rs.next()) {

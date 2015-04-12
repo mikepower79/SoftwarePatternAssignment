@@ -104,8 +104,8 @@
 			<result name="error">loginfail.jsp</result>
 		</action>
 		
-		<action name="final" class="com.login.FinalCheckout" method="execute">
-			<result name="success">finalcheckout.jsp</result>
+		<action name="proceedToCheckout" class="com.login.FinalCheckout" method="execute">
+			<result name="success">payment.jsp</result>
 			<result name="error">loginfail.jsp</result>
 		</action>
 		
@@ -114,12 +114,12 @@
 			<result name="error">loginfail.jsp</result>
 		</action>
 		
-		<action name="ipadReview" class="com.login.ProductReviewsAction">
+		<action name="ipadReview" class="com.login.IpadProductReviewsAction">
 			<result name="success">ipadReviews.jsp</result>
 			<result name="error">loginfail.jsp</result>
 		</action>
 		
-		<action name="macbookReview" class="com.login.Success">
+		<action name="macbookReview" class="com.login.MacbookProductReviewsAction">
 			<result name="success">macbookReviews.jsp</result>
 			<result name="error">loginfail.jsp</result>
 		</action>
@@ -146,6 +146,21 @@
 		
 		<action name="viewCustomers" class="com.login.CustomerAction">
 			<result name="success">customerList.jsp</result>
+			<result name="error">loginfail.jsp</result>
+		</action>
+		
+		<action name="purchaseHistory" class="com.login.PurchaseHistoryAction">
+			<result name="success">purchaseHistoryList.jsp</result>
+			<result name="error">loginfail.jsp</result>
+		</action>
+		
+		<action name="ipadSelect" class="com.login.IpadSelect">
+			<result name="success">buyIpad.jsp</result>
+			<result name="error">loginfail.jsp</result>
+		</action>
+		
+		<action name="makepayment" class="com.login.Success">
+			<result name="success">paymentConfirmation.jsp</result>
 			<result name="error">loginfail.jsp</result>
 		</action>
 	</package>

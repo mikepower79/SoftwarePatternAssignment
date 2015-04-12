@@ -1,32 +1,30 @@
 package com.login;
 
-public class Item {
+public class PurchasedItem {
 	
-	private int item_id, quantity;
-	private String title, manufacturer, category, image;
+	private int purchase_id, quantity;
+	private String title, manufacturer;
 	private float price;
 	
-	public Item() {
+	public PurchasedItem() {
 		
 	}
-	
-	public Item(int item_id, int quantity, String title, String manufacturer,
-			String category, String image, float price) {
-		this.item_id = item_id;
+
+	public PurchasedItem(int purchase_id, int quantity, String title,
+			String manufacturer, float price) {
+		this.purchase_id = purchase_id;
 		this.quantity = quantity;
 		this.title = title;
 		this.manufacturer = manufacturer;
-		this.category = category;
-		this.image = image;
 		this.price = price;
 	}
 
-	public int getItem_id() {
-		return item_id;
+	public int getPurchase_id() {
+		return purchase_id;
 	}
 
-	public void setItem_id(int item_id) {
-		this.item_id = item_id;
+	public void setPurchase_id(int purchase_id) {
+		this.purchase_id = purchase_id;
 	}
 
 	public int getQuantity() {
@@ -51,22 +49,6 @@ public class Item {
 
 	public void setManufacturer(String manufacturer) {
 		this.manufacturer = manufacturer;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
 	}
 
 	public float getPrice() {

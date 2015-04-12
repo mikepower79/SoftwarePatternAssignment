@@ -32,23 +32,18 @@ public class FinalCheckout extends ActionSupport {
 
 			//Statement st = conn1.createStatement(); 
 			Statement st = conn1.createStatement(); 
-			ResultSet rs = st.executeQuery("select * from purchases");
+			ResultSet rs = st.executeQuery("select * from selectedItemsToPurchase");
 
 			PurchasesBean ve = null;
 			while (rs.next()) {
 				ve = new PurchasesBean();
-				ve.setPurchases_id(rs.getInt(1));
-				ve.setTitle(rs.getString(2));
-				ve.setManufacturer(rs.getString(3));
-				ve.setPrice(rs.getFloat(4));
-				ve.setAmmount(rs.getInt(5));
+				//ve.setPurchases_id(rs.getInt(1));
+				ve.setTitle(rs.getString(1));
+				//ve.setManufacturer(rs.getString(3));
+				//ve.setPrice(rs.getFloat(4));
+				ve.setAmmount(rs.getInt(2));
 
 				purchasesList.add(ve);
-
-//				Statement st1 = conn1.createStatement(); 
-//				ResultSet rs1 = st1.executeQuery("select * from user where name ='session.user.getId()'");
-//				User user = new User();
-//				user.setName(rs1.getString(1));
 
 				ret = SUCCESS;
 			}
@@ -154,5 +149,13 @@ public class FinalCheckout extends ActionSupport {
 
 	public void setPurchases_id(int purchases_id) {
 		this.purchases_id = purchases_id;
+	}
+
+	public ArrayList<User> getUserList() {
+		return userList;
+	}
+
+	public void setUserList(ArrayList<User> userList) {
+		this.userList = userList;
 	}
 }

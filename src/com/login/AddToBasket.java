@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -16,62 +15,87 @@ public class AddToBasket extends ActionSupport{
 	private static final long serialVersionUID = 1L;
 	private String email,title,manufacturer,category;
 	private int purchases_id, item_id,id,ammount,quantity;
+	public ArrayList<PurchasesBean> getPurchasesList() {
+		return purchasesList;
+	}
+
+	public void setPurchasesList(ArrayList<PurchasesBean> purchasesList) {
+		this.purchasesList = purchasesList;
+	}
+
+	public void setItem_id(int item_id) {
+		this.item_id = item_id;
+	}
+
 	private float price;
 	private int num;
 	
 	public String execute() {
-		
+		 ResultSet rs1;
 		String ret = ERROR;
-		Connection conn = null;
+		Connection conn1 = null;
 		itemList =  new ArrayList<Item>();
 		purchasesList = new ArrayList<PurchasesBean>();
 
 		try {
 			String URL = "jdbc:mysql://localhost/paddyassignment";
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection(URL, "root", "root");
+			conn1 = DriverManager.getConnection(URL, "root", "root");
 	
-			num =getId();
+			 num =getId();
 			System.out.println(num+"bbbbbbbbbbbbbbb");
 			
-			Statement st = conn.createStatement(); 
-			ResultSet rs = st.executeQuery("select * from item where item_id = 5 ");
-		       
+			
+			 String sql = "SELECT * FROM item WHERE";
+	         sql+=" item_id = ? " ;
+	         PreparedStatement ps1 = conn1.prepareStatement(sql);
+	         ps1.setInt(1, getId());	        	 	         
+	          rs1 = ps1.executeQuery();
+	         
+	         PreparedStatement ps11=conn1.prepareStatement("insert into selectedItemsToPurchase values(?,?)");
+	         while(rs1.next()){
+	        	 System.out.println("sssssssssssssssss"+rs1.getInt(1));
+				ps11.setInt(1, rs1.getInt(1));
+				ps11.setInt(2, rs1.getInt(7));												
+				ps11.executeUpdate();
+	         }
+	         
+	            
 			Item ve = null;
-			while (rs.next()) {
+			while (rs1.next()) {
 				ve = new Item();
-				ve.setItem_id(rs.getInt(1));
-				ve.setTitle(rs.getString(2));
-				ve.setManufacturer(rs.getString(3));
-				ve.setPrice(rs.getFloat(4));
+				ve.setItem_id(rs1.getInt(1));
+				ve.setTitle(rs1.getString(2));
+				ve.setManufacturer(rs1.getString(3));
+				ve.setPrice(rs1.getFloat(4));
 				
 				itemList.add(ve);
 				
-				PreparedStatement ps=conn.prepareStatement("insert into purchases values(?,?,?,?,?)"); 
+				PreparedStatement ps=conn1.prepareStatement("insert into purchases values(?,?,?,?,?)"); 
 				ps.setInt(1, getPurchases_id());
-				ps.setString(2, rs.getString(2));				
-				ps.setString(3 , rs.getString(3));
-				ps.setFloat(4 , rs.getFloat(4));
+				ps.setString(2, rs1.getString(2));				
+				ps.setString(3 , rs1.getString(3));
+				ps.setFloat(4 , rs1.getFloat(4));
 				ps.setInt(5 , getAmmount());
 				
 				ps.executeUpdate();
 				
 				PurchasesBean purchases =  new PurchasesBean();
-				purchases.setTitle(rs.getString(2));
-				purchases.setManufacturer(rs.getString(3));
-				purchases.setPrice(rs.getFloat(4));
+				purchases.setTitle(rs1.getString(2));
+				purchases.setManufacturer(rs1.getString(3));
+				purchases.setPrice(rs1.getFloat(4));
 				purchases.setAmmount(getAmmount());
 				purchasesList.add(purchases);
 				
 				ret = SUCCESS;
-		
 			}
+	         
 		} catch (Exception e) {
 			ret = ERROR;
 		} finally {
-			if (conn != null) {
+			if (conn1 != null) {
 				try {
-					conn.close();
+					conn1.close();
 				} catch (Exception e) {
 				}
 			}
@@ -86,18 +110,6 @@ public class AddToBasket extends ActionSupport{
 
 	public void setNum(int num) {
 		this.num = num;
-	}
-	
-	public ArrayList<PurchasesBean> getPurchasesList() {
-		return purchasesList;
-	}
-
-	public void setPurchasesList(ArrayList<PurchasesBean> purchasesList) {
-		this.purchasesList = purchasesList;
-	}
-
-	public void setItem_id(int item_id) {
-		this.item_id = item_id;
 	}
 
 	private int getItem_id() {

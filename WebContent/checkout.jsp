@@ -10,21 +10,20 @@
 <body>
 
 	You have selected
-	<s:property value="ammount " />
-	<s:iterator value="itemList" status="stat">
-
-		<s:property value="manufacturer" />
-		<s:property value="title" />
-						@ $<s:property value="price " /> each
-						Total cost $<s:property value="price *ammount " />
-
-	</s:iterator>
+	<s:property value="ammount" />
+	<s:property value="manufacturer" />
+	<s:property value="title" />
 	
+	<s:iterator value="itemList" status="stat">
+						@ $<s:property value="price" /> each
+						Total cost $<s:property value="price * ammount" />
+	
+	</s:iterator>
 	<s:form action="goback">
 	<s:submit value="Add Another Item" align="left"/>
 	</s:form>
 	
-	<s:form action="final">
+	<s:form action="proceedToCheckout">
 	<s:submit value="Proceed to Chekout" align="left"/>
 	</s:form>
 </body>

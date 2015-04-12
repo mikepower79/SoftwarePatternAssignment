@@ -36,19 +36,22 @@
 						<td><s:property value="quantity" /></td>
 						<td><img alt="" src='<s:property value="image" />'
 							height="100" width="200" /></td>
+		<td><s:form action="ipadSelect">
+		<s:submit type="image" src="ipad.png"></s:submit>
+		</s:form></td>
 						
 				</tr>
 			</s:iterator>
 		</table>
-
+		
 	<s:form action="addtobasket">
-		<s:textfield name="id" label="Item id" value=""/>
-		<s:textfield name="ammount" label="Amount" value="" />	
-		<s:submit value="Add to basket" align="left"/>
+		<s:textfield name="title" label="Product" value=""/>
+		<s:textfield name="ammount" label="Quantity" value="" />	
+		<s:submit value="Select Item" align="left"/>
 	</s:form>
 	
 	<s:form action= "moreproducts">
-		<s:submit value="More products" align="left" />	
+		<s:submit value="Select item from other category" align="left" />	
 	</s:form>	
 
 </body>

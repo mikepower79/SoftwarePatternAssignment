@@ -23,8 +23,6 @@ public class CheckoutAction extends ActionSupport {
 
 	public String execute() {
 		
-		
-	
 		String ret = ERROR;
 		Connection conn1 = null;
 		itemList =  new ArrayList<Item>();

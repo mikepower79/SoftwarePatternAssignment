@@ -33,7 +33,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware{
 	         Class.forName("com.mysql.jdbc.Driver");
 	         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/paddyassignment","root", "root");
 
-	         PreparedStatement ps = conn.prepareStatement("SELECT name, email FROM user WHERE userName = ? AND password = ?");
+	         PreparedStatement ps = conn.prepareStatement("SELECT name, email, address1, address2, address3 FROM user WHERE userName = ? AND password = ?");
 	         ps.setString(1, userName);
 	         ps.setString(2, password);
 	         ResultSet rs = ps.executeQuery();
@@ -41,6 +41,10 @@ public class LoginAction extends ActionSupport implements ServletRequestAware{
 	         while (rs.next()) {
 	        	 name = rs.getString(1);
 	        	 email =rs.getString(2);
+	        	 address1=rs.getString(3);
+	        	 address2=rs.getString(4);
+	        	 address3=rs.getString(5);
+ 	 
 	        	 User user = new User(id, name, address1, address2, address3, email, userName, password);
 	        	 session.setAttribute("user", user);
 	             if(name.equalsIgnoreCase("Joe Admin")){
